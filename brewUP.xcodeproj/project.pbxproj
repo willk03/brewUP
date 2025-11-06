@@ -24,25 +24,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C2EFAA22E286A1300168329 /* drinkUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C2EFAB12E286A1500168329 /* drinkUPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drinkUPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C2EFABB2E286A1500168329 /* drinkUPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drinkUPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2EFAA22E286A1300168329 /* brewUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brewUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2EFAB12E286A1500168329 /* brewUPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brewUPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2EFABB2E286A1500168329 /* brewUPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brewUPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C497B332E4FA1D800A64FE2 /* brewUP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "brewUP-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0C2EFAA42E286A1300168329 /* drinkUP */ = {
+		0C2EFAA42E286A1300168329 /* brewUP */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = drinkUP;
+			path = brewUP;
 			sourceTree = "<group>";
 		};
-		0C2EFAB42E286A1500168329 /* drinkUPTests */ = {
+		0C2EFAB42E286A1500168329 /* brewUPTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = drinkUPTests;
+			path = brewUPTests;
 			sourceTree = "<group>";
 		};
-		0C2EFABE2E286A1500168329 /* drinkUPUITests */ = {
+		0C2EFABE2E286A1500168329 /* brewUPUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = drinkUPUITests;
+			path = brewUPUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +76,10 @@
 		0C2EFA992E286A1300168329 = {
 			isa = PBXGroup;
 			children = (
-				0C2EFAA42E286A1300168329 /* drinkUP */,
-				0C2EFAB42E286A1500168329 /* drinkUPTests */,
-				0C2EFABE2E286A1500168329 /* drinkUPUITests */,
+				0C497B332E4FA1D800A64FE2 /* brewUP-Info.plist */,
+				0C2EFAA42E286A1300168329 /* brewUP */,
+				0C2EFAB42E286A1500168329 /* brewUPTests */,
+				0C2EFABE2E286A1500168329 /* brewUPUITests */,
 				0C2EFAA32E286A1300168329 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +87,9 @@
 		0C2EFAA32E286A1300168329 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C2EFAA22E286A1300168329 /* drinkUP.app */,
-				0C2EFAB12E286A1500168329 /* drinkUPTests.xctest */,
-				0C2EFABB2E286A1500168329 /* drinkUPUITests.xctest */,
+				0C2EFAA22E286A1300168329 /* brewUP.app */,
+				0C2EFAB12E286A1500168329 /* brewUPTests.xctest */,
+				0C2EFABB2E286A1500168329 /* brewUPUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +97,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C2EFAA12E286A1300168329 /* drinkUP */ = {
+		0C2EFAA12E286A1300168329 /* brewUP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C2EFAC52E286A1500168329 /* Build configuration list for PBXNativeTarget "drinkUP" */;
+			buildConfigurationList = 0C2EFAC52E286A1500168329 /* Build configuration list for PBXNativeTarget "brewUP" */;
 			buildPhases = (
 				0C2EFA9E2E286A1300168329 /* Sources */,
 				0C2EFA9F2E286A1300168329 /* Frameworks */,
@@ -108,18 +110,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0C2EFAA42E286A1300168329 /* drinkUP */,
+				0C2EFAA42E286A1300168329 /* brewUP */,
 			);
-			name = drinkUP;
+			name = brewUP;
 			packageProductDependencies = (
 			);
 			productName = drinkUP;
-			productReference = 0C2EFAA22E286A1300168329 /* drinkUP.app */;
+			productReference = 0C2EFAA22E286A1300168329 /* brewUP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C2EFAB02E286A1500168329 /* drinkUPTests */ = {
+		0C2EFAB02E286A1500168329 /* brewUPTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C2EFAC82E286A1500168329 /* Build configuration list for PBXNativeTarget "drinkUPTests" */;
+			buildConfigurationList = 0C2EFAC82E286A1500168329 /* Build configuration list for PBXNativeTarget "brewUPTests" */;
 			buildPhases = (
 				0C2EFAAD2E286A1500168329 /* Sources */,
 				0C2EFAAE2E286A1500168329 /* Frameworks */,
@@ -131,18 +133,18 @@
 				0C2EFAB32E286A1500168329 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				0C2EFAB42E286A1500168329 /* drinkUPTests */,
+				0C2EFAB42E286A1500168329 /* brewUPTests */,
 			);
-			name = drinkUPTests;
+			name = brewUPTests;
 			packageProductDependencies = (
 			);
 			productName = drinkUPTests;
-			productReference = 0C2EFAB12E286A1500168329 /* drinkUPTests.xctest */;
+			productReference = 0C2EFAB12E286A1500168329 /* brewUPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0C2EFABA2E286A1500168329 /* drinkUPUITests */ = {
+		0C2EFABA2E286A1500168329 /* brewUPUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C2EFACB2E286A1500168329 /* Build configuration list for PBXNativeTarget "drinkUPUITests" */;
+			buildConfigurationList = 0C2EFACB2E286A1500168329 /* Build configuration list for PBXNativeTarget "brewUPUITests" */;
 			buildPhases = (
 				0C2EFAB72E286A1500168329 /* Sources */,
 				0C2EFAB82E286A1500168329 /* Frameworks */,
@@ -154,13 +156,13 @@
 				0C2EFABD2E286A1500168329 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				0C2EFABE2E286A1500168329 /* drinkUPUITests */,
+				0C2EFABE2E286A1500168329 /* brewUPUITests */,
 			);
-			name = drinkUPUITests;
+			name = brewUPUITests;
 			packageProductDependencies = (
 			);
 			productName = drinkUPUITests;
-			productReference = 0C2EFABB2E286A1500168329 /* drinkUPUITests.xctest */;
+			productReference = 0C2EFABB2E286A1500168329 /* brewUPUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C2EFA9D2E286A1300168329 /* Build configuration list for PBXProject "drinkUP" */;
+			buildConfigurationList = 0C2EFA9D2E286A1300168329 /* Build configuration list for PBXProject "brewUP" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +202,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C2EFAA12E286A1300168329 /* drinkUP */,
-				0C2EFAB02E286A1500168329 /* drinkUPTests */,
-				0C2EFABA2E286A1500168329 /* drinkUPUITests */,
+				0C2EFAA12E286A1300168329 /* brewUP */,
+				0C2EFAB02E286A1500168329 /* brewUPTests */,
+				0C2EFABA2E286A1500168329 /* brewUPUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +260,12 @@
 /* Begin PBXTargetDependency section */
 		0C2EFAB32E286A1500168329 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C2EFAA12E286A1300168329 /* drinkUP */;
+			target = 0C2EFAA12E286A1300168329 /* brewUP */;
 			targetProxy = 0C2EFAB22E286A1500168329 /* PBXContainerItemProxy */;
 		};
 		0C2EFABD2E286A1500168329 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C2EFAA12E286A1300168329 /* drinkUP */;
+			target = 0C2EFAA12E286A1300168329 /* brewUP */;
 			targetProxy = 0C2EFABC2E286A1500168329 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -393,22 +395,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MM4ZHJ92N9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "brewUP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.willkuster.drinkUP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willkuster.brewUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -420,22 +426,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MM4ZHJ92N9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "brewUP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.willkuster.drinkUP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willkuster.brewUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,7 +466,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/drinkUP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/drinkUP";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/brewUP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/brewUP";
 			};
 			name = Debug;
 		};
@@ -474,7 +484,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/drinkUP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/drinkUP";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/brewUP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/brewUP";
 			};
 			name = Release;
 		};
@@ -513,7 +523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C2EFA9D2E286A1300168329 /* Build configuration list for PBXProject "drinkUP" */ = {
+		0C2EFA9D2E286A1300168329 /* Build configuration list for PBXProject "brewUP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C2EFAC32E286A1500168329 /* Debug */,
@@ -522,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C2EFAC52E286A1500168329 /* Build configuration list for PBXNativeTarget "drinkUP" */ = {
+		0C2EFAC52E286A1500168329 /* Build configuration list for PBXNativeTarget "brewUP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C2EFAC62E286A1500168329 /* Debug */,
@@ -531,7 +541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C2EFAC82E286A1500168329 /* Build configuration list for PBXNativeTarget "drinkUPTests" */ = {
+		0C2EFAC82E286A1500168329 /* Build configuration list for PBXNativeTarget "brewUPTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C2EFAC92E286A1500168329 /* Debug */,
@@ -540,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C2EFACB2E286A1500168329 /* Build configuration list for PBXNativeTarget "drinkUPUITests" */ = {
+		0C2EFACB2E286A1500168329 /* Build configuration list for PBXNativeTarget "brewUPUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C2EFACC2E286A1500168329 /* Debug */,

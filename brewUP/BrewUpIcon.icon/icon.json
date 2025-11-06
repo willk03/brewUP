@@ -1,0 +1,66 @@
+{
+  "fill" : {
+    "automatic-gradient" : "display-p3:0.38344,0.24691,0.07802,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.47843,1.00000,1.00000"
+              }
+            }
+          ],
+          "glass" : true,
+          "image-name" : "brewUp Logo Mug.svg",
+          "name" : "brewUp Logo Mug",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              56.4609375,
+              -13.890625
+            ]
+          }
+        },
+        {
+          "glass" : true,
+          "image-name" : "brewUp Logo Arrow.svg",
+          "name" : "brewUp Logo Arrow",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.43
+            }
+          ],
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              47.6875,
+              12.859375
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
