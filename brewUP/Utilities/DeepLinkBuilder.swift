@@ -1,33 +1,11 @@
 //
-//  drinkUPApp.swift
-//  drinkUP
+//  DeepLinkBuilder.swift
+//  brewUP
 //
-//  Created by Will Kuster on 7/16/25.
+//  Created by Will Kuster on 1/16/26.
 //
-
 import SwiftUI
 import SwiftData
-
-@main
-struct drinkUPApp: App {
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(for: Drink.self)
-    }
-}
-
-
-func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    // Handle the URL
-    print("Opened with URL: \(url)")
-    
-
-    return true
-}
-
 
 struct DeepLinkBuilder {
     static func createDeepLink(action: String, data: [String: Any]) -> URL? {

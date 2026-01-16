@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0C73EF9B2EBCEE6200367879 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0C73EF992EBCEE5F00367879 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0C2EFAB22E286A1500168329 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,6 +32,7 @@
 		0C2EFAB12E286A1500168329 /* brewUPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brewUPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C2EFABB2E286A1500168329 /* brewUPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brewUPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C497B332E4FA1D800A64FE2 /* brewUP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "brewUP-Info.plist"; sourceTree = "<group>"; };
+		0C73EF992EBCEE5F00367879 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0C497B332E4FA1D800A64FE2 /* brewUP-Info.plist */,
+				0C73EF992EBCEE5F00367879 /* README.md */,
 				0C2EFAA42E286A1300168329 /* brewUP */,
 				0C2EFAB42E286A1500168329 /* brewUPTests */,
 				0C2EFABE2E286A1500168329 /* brewUPUITests */,
@@ -238,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C73EF9B2EBCEE6200367879 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

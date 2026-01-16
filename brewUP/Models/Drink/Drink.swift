@@ -2,7 +2,34 @@ import Foundation
 import SwiftData
 import PhotosUI
 
-
+/**
+ * Represents a beverage recipe with ingredients, instructions, and metadata.
+ *
+ * The Drink model is the core data structure of the brewUP app, storing all information
+ * about a beverage including its recipe, categorization, and user preferences. It supports
+ * both default drinks and user-created recipes.
+ *
+ * - Important: This class uses SwiftData for persistence. Ensure modelContainer is configured.
+ *
+ * ## Usage Example:
+ * ```swift
+ * let drink = Drink(
+ *     name: "Latte",
+ *     drinkDescription: "Espresso with steamed milk",
+ *     tags: ["Default", "Favorite"],
+ *     ingredients: ["Espresso", "Milk"],
+ *     equipment: ["Espresso Machine", "Steam Wand"]
+ * )
+ * ```
+ *
+ * ## Tags System:
+ * - "Default": Pre-loaded drinks that come with the app
+ * - "Favorite": User-marked favorite drinks
+ * - "CreatedByUser": Drinks created by the user
+ * - "NewlyCreated": Drinks imported via deep link
+ *
+ * - Note: Drinks can have multiple tags for categorization and filtering
+ */
 @Model
 class Drink {
     
@@ -97,6 +124,11 @@ class Drink {
 
     }
     
+    /**
+     * Creates a deep copy of the drink.
+     *
+     * - Returns: A new Drink instance with identical properties
+     */
     func copy() -> Drink {
         return Drink(
             name: self.name,
@@ -120,107 +152,14 @@ class Drink {
             )
     }
     
-    func containsTag(_ tag: String) -> Bool {
-        return self.tags.contains(tag)
-    }
-    
-    func toggleFavorite() {
-        if self.tags.contains("Favorite") {
-            self.tags.removeAll { $0 == "Favorite" }
-        } else {
-            self.tags.append("Favorite")
-        }
-    }
-    
-    // Function to return UIImage no matter the way its stored in file
-    func getImage () async -> UIImage? {
-        if imageData != nil  {
-            // Computed property to get UIImage
-            var image: UIImage? {
-                guard let imageData = imageData else { return nil }
-                return UIImage(data: imageData)
-            }
-            return image
-
-        } else if imageURL != nil {
-            let image = await loadImage(from: imageURL!)
-            return image
-        } else {
-            return UIImage(named: imageName)
-        }
-    }
-    
-    // Set image based off a UIImage input (From photos picker)
-    func setImage(_ image: UIImage?, compressionQuality: CGFloat = 0.8) {
-        if let image = image {
-            self.imageData = image.jpegData(compressionQuality: compressionQuality)
-        } else {
-            self.imageData = nil
-        }
-    }
-    
-    //Used to load drink image from URL, dont call just use getImage function
-    func loadImage(from url: URL) async -> UIImage? {
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            return UIImage(data: data)
-        } catch {
-            print("Failed to load image: \(error)")
-            return nil
-        }
-    }
-
-    func hasImage () -> Bool {
-        return imageData != nil || imageURL != nil || imageName != "DefaultCoffeePicture"
-    }
-    
-    
-    // Enums for choices
-    enum Difficulty: String, Codable, CaseIterable {
-        case easy = "Beginner"
-        case medium = "Medium"
-        case hard = "Hard"
-        case expert = "Expert Barista"
-    }
-
-    enum DrinkCategory: String, Codable, CaseIterable {
-        case coffee = "Coffee"
-        case tea = "Tea"
-        case smoothie = "Smoothie"
-        case juice = "Juice"
-        case soda = "Soda"
-        case water = "Infused Water"
-        case other = "Other"
-    }
-
-    enum Temperature: String, Codable, CaseIterable {
-        case hot = "Hot"
-        case cold = "Cold"
-        case both = "Hot or Cold"
-    }
-
-    enum CaffeineLevel: String, Codable, CaseIterable {
-        case decaf = "Decaf"
-        case caf = "Caffeinated"
-        case optional = "Optional Caffeine"
-    }
-
-    enum TimeOfDay: String, Codable, CaseIterable {
-        case morning = "Morning"
-        case afternoon = "Afternoon"
-        case night = "Night"
-        case anytime = "Anytime"
-    }
-    
-    enum Season: String, Codable, CaseIterable {
-        case spring = "Spring"
-        case summer = "Summer"
-        case fall = "Fall"
-        case winter = "Winter"
-        case anySeason = "Any Season"
-    }
-    
-    
+    /**
+     * Converts the drink to a dictionary for deep linking.
+     *
+     * Creates a serializable representation of the drink that can be
+     * encoded and shared via URL.
+     *
+     * - Returns: Dictionary containing the drink's shareable properties
+     */
     func getDictonary () -> [String: Any] {
         let output: [String: Any] = [
             "name" : self.name,
@@ -282,31 +221,118 @@ class Drink {
         self.tags.append("NewlyCreated")
     }
     
-}
+    /**
+     * Checks if the drink contains a specific tag.
+     *
+     * - Parameter tag: The tag to search for
+     * - Returns: True if the drink's tags array contains the specified tag
+     */
+    func containsTag(_ tag: String) -> Bool {
+        return self.tags.contains(tag)
+    }
+    
 
-func listOfTaggedDrinks(drinks: [Drink], includeTags: [String] = [], excludeTags: [String] = []) -> [Drink] {
-    var result: [Drink] = []
-    for tag in includeTags {
-        for drink in drinks {
-            if drink.tags.contains(tag) && result.firstIndex(of: drink) == nil {
-                result.append(drink)
-            }
+    /**
+     * Toggles the "Favorite" tag on this drink.
+     *
+     * If the drink is currently a favorite, removes the tag.
+     * If not a favorite, adds the tag.
+     */
+    func toggleFavorite() {
+        if self.tags.contains("Favorite") {
+            self.tags.removeAll { $0 == "Favorite" }
+        } else {
+            self.tags.append("Favorite")
         }
     }
-    for tag in excludeTags {
-        for drink in result {
-            if drink.tags.contains(tag) {
-                result.removeAll { $0 === drink}
+    
+    /**
+     * Retrieves the drink's image from any available source.
+     *
+     * Checks sources in this order:
+     * 1. User-uploaded imageData
+     * 2. Remote imageURL
+     * 3. Local imageName asset
+     *
+     * - Returns: UIImage if available, nil otherwise
+     * - Note: This is an async function as it may need to download from URL
+     */
+    func getImage () async -> UIImage? {
+        if imageData != nil  {
+            // Computed property to get UIImage
+            var image: UIImage? {
+                guard let imageData = imageData else { return nil }
+                return UIImage(data: imageData)
             }
+            return image
+
+        } else if imageURL != nil {
+            let image = await loadImage(from: imageURL!)
+            return image
+        } else {
+            return UIImage(named: imageName)
         }
     }
-    return result
-}
+    
+    /**
+     * Sets the drink's image from a UIImage.
+     *
+     * Compresses the image to JPEG format and stores in imageData.
+     *
+     * - Parameters:
+     *   - image: The UIImage to store, or nil to clear the image
+     *   - compressionQuality: JPEG compression quality (0.0 - 1.0), defaults to 0.8
+     */
+    func setImage(_ image: UIImage?, compressionQuality: CGFloat = 0.8) {
+        if let image = image {
+            self.imageData = image.jpegData(compressionQuality: compressionQuality)
+        } else {
+            self.imageData = nil
+        }
+    }
+    
+    /**
+     * Asynchronously loads an image from a URL.
+     *
+     * This is a private helper method used internally by `getImage()` when
+     * the drink has an imageURL but no local imageData.
+     *
+     * - Parameter url: The URL to download the image from
+     * - Returns: UIImage if successfully downloaded, nil if download fails
+     *
+     * - Warning: This method performs a network request and should only be called
+     *           from an async context. Use `getImage()` instead of calling directly.
+     *
+     * - Note: Errors are caught and printed to console but not thrown, returning nil instead.
+     *
+     * ## Implementation Details:
+     * Uses URLSession.shared for the network request. Does not cache the downloaded
+     * image - it's expected that the caller will store it in imageData if needed.
+     *
+     * ## Example (Internal use only):
+     * ```swift
+     * if let url = imageURL {
+     *     let image = await loadImage(from: url)
+     *     return image
+     * }
+     * ```
+     */
+    private func loadImage(from url: URL) async -> UIImage? {
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return UIImage(data: data)
+        } catch {
+            print("Failed to load image: \(error)")
+            return nil
+        }
+    }
 
-func sortedByDateCreated( drinks: [Drink]) -> [Drink] {
-    return drinks.sorted { $0.dateCreated > $1.dateCreated }
-}
-
-func sortedByDateChecked( drinks: [Drink]) -> [Drink] {
-    return drinks.sorted { $0.dateLastChecked > $1.dateLastChecked }
+    /**
+     * Checks if the drink has any form of image available.
+     *
+     * - Returns: True if the drink has imageData, imageURL, or a non-default imageName
+     */
+    func hasImage () -> Bool {
+        return imageData != nil || imageURL != nil || imageName != "DefaultCoffeePicture"
+    }
 }
